@@ -9,6 +9,8 @@ the program compare the day from the file excel with the day in that moment, so 
 
 # Libraries
 
+Work on Python 3.9
+
 * openpyxl
 * datetime
 * pathlib
