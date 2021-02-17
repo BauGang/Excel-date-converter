@@ -17,14 +17,14 @@ def convertDate(ordinal):
             ordinal -= 1
         return epochStart + timedelta(days=ordinal)
 
-row_count = ws.max_row-284
+row_count = ws.max_row
 count = 0
 
 for j in range(1, row_count, HoursOfWork):  # skip the hours, so he can take the day 
     a = ws.cell(row=j, column=1).value
     b = convertDate(a)
     if giorno == str(b):
-        for x in range(j+1, 140):           # you can put ws.max_row but remember, the librarie take the last row changed,  
+        for x in range(j+1, row_count):     # you can put ws.max_row but remember, the library take the last row changed,  
             if count == HoursOfWork:        # so if you had 300 rows but you edited the row 1000 too the librarie take the row 1000.
                 break
             else:
